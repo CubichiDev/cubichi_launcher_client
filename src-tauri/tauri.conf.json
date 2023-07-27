@@ -55,8 +55,8 @@
         "windows": [
             {
                 "fullscreen": false,
-                "height": 600,
-                "resizable": true,
+                "height": 610,
+                "resizable": false,
                 "title": "cubich-launcher",
                 "width": 800
             }

@@ -66,134 +66,13 @@ checksum = "3b13c32d80ecc7ab747b80c3784bce54ee8a7a0cc4fbda9bf4cda2cf6fe90854"
 name = "app"
 version = "0.1.0"
 dependencies = [
+ "directories",
  "log",
  "serde",
  "serde_json",
  "tauri",
  "tauri-build",
  "tauri-plugin-log",
-]
-
-[[package]]
-name = "async-broadcast"
-version = "0.5.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7c48ccdbf6ca6b121e0f586cbc0e73ae440e56c67c30fa0873b4e110d9c26d2b"
-dependencies = [
- "event-listener",
- "futures-core",
-]
-
-[[package]]
-name = "async-channel"
-version = "1.9.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "81953c529336010edd6d8e358f886d9581267795c61b19475b71314bffa46d35"
-dependencies = [
- "concurrent-queue",
- "event-listener",
- "futures-core",
-]
-
-[[package]]
-name = "async-executor"
-version = "1.5.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6fa3dc5f2a8564f07759c008b9109dc0d39de92a88d5588b8a5036d286383afb"
-dependencies = [
- "async-lock",
- "async-task",
- "concurrent-queue",
- "fastrand 1.9.0",
- "futures-lite",
- "slab",
-]
-
-[[package]]
-name = "async-fs"
-version = "1.6.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "279cf904654eeebfa37ac9bb1598880884924aab82e290aa65c9e77a0e142e06"
-dependencies = [
- "async-lock",
- "autocfg",
- "blocking",
- "futures-lite",
-]
-
-[[package]]
-name = "async-io"
-version = "1.13.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0fc5b45d93ef0529756f812ca52e44c221b35341892d3dcc34132ac02f3dd2af"
-dependencies = [
- "async-lock",
- "autocfg",
- "cfg-if",
- "concurrent-queue",
- "futures-lite",
- "log",
- "parking",
- "polling",
- "rustix 0.37.23",
- "slab",
- "socket2",
- "waker-fn",
-]
-
-[[package]]
-name = "async-lock"
-version = "2.7.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "fa24f727524730b077666307f2734b4a1a1c57acb79193127dcc8914d5242dd7"
-dependencies = [
- "event-listener",
-]
-
-[[package]]
-name = "async-process"
-version = "1.7.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7a9d28b1d97e08915212e2e45310d47854eafa69600756fc735fb788f75199c9"
-dependencies = [
- "async-io",
- "async-lock",
- "autocfg",
- "blocking",
- "cfg-if",
- "event-listener",
- "futures-lite",
- "rustix 0.37.23",
- "signal-hook",
- "windows-sys 0.48.0",
-]
-
-[[package]]
-name = "async-recursion"
-version = "1.0.4"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0e97ce7de6cf12de5d7226c73f5ba9811622f4db3a5b91b55c53e987e5f91cba"
-dependencies = [
- "proc-macro2",
- "quote",
- "syn 2.0.27",
-]
-
-[[package]]
-name = "async-task"
-version = "4.4.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ecc7ab41815b3c653ccd2978ec3255c81349336702dfdf62ee6f7069b12a3aae"
-
-[[package]]
-name = "async-trait"
-version = "0.1.72"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "cc6dde6e4ed435a4c1ee4e73592f5ba9da2151af10076cc04858746af9352d09"
-dependencies = [
- "proc-macro2",
- "quote",
- "syn 2.0.27",
 ]
 
 [[package]]

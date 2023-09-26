@@ -1,0 +1,16 @@
+[target.x86_64-pc-windows-msvc]
+linker = "lld"
+
+# MAC M1
+# rustflags = [
+#     "-Lnative=/Users/fedor/.xwin/crt/lib/x86_64",
+#     "-Lnative=/Users/fedor/.xwin/sdk/lib/um/x86_64",
+#     "-Lnative=/Users/fedor/.xwin/sdk/lib/ucrt/x86_64",
+# ]
+
+# DOCKER CONTAINER
+rustflags = [
+    "-Lnative=/xwin/crt/lib/x86_64",
+    "-Lnative=/xwin/sdk/lib/um/x86_64",
+    "-Lnative=/xwin/sdk/lib/ucrt/x86_64",
+]

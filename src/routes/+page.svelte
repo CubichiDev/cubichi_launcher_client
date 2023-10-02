@@ -1,9 +1,9 @@
 <!-- App.svelte -->
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import Footer from './Footer.svelte';
-	import AuthenticationForm from './AuthenticationForm.svelte';
-	import ImageBanner from './ImageBanner.svelte';
+	import Footer from '$components/Footer.svelte';
+	import ImageBanner from '$components/ImageBanner.svelte';
+	import AuthenticationForm from '$components/AuthenticationForm.svelte';
 
 	let progressBarValue = 0;
 	let showProgressBar = false;
@@ -43,7 +43,7 @@
 	<div class="container">
 		<ImageBanner imageUrl="https://picsum.photos/800/200" --height="200px" />
 		<AuthenticationForm onLogin={handleLogin} --height="200px" />
-		<Footer buttonText="Play" --height="50px" />
+		<Footer --height="50px" />
 	</div>
 </main>
 

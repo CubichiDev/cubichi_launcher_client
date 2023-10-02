@@ -11,7 +11,16 @@
     },
     "tauri": {
         "allowlist": {
-            "all": false
+            "path": {
+                "all": true
+            },
+            "fs": {
+                "all": true,
+                "scope": [
+                    "$APPDATA/*",
+                    "$APPDATA/**/*"
+                ]
+            }
         },
         "bundle": {
             "active": true,
@@ -28,7 +37,7 @@
                 "icons/icon.icns",
                 "icons/icon.ico"
             ],
-            "identifier": "com.cubich.launcher.macos",
+            "identifier": "com.cubichLauncher",
             "longDescription": "",
             "macOS": {
                 "entitlements": null,

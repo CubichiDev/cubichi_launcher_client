@@ -1,5 +1,6 @@
-import { writeBinaryFile } from '@tauri-apps/api/fs';
+import { readDir, writeBinaryFile, createDir } from '@tauri-apps/api/fs';
 import { info, error } from 'tauri-plugin-log-api';
+import { appDataDir } from '@tauri-apps/api/path';
 
 export class FileDownloader {
     private full_path: string;
@@ -13,6 +14,16 @@ export class FileDownloader {
     public async download() {
         info(`Starting download process from ${this.url} to ${this.destinationPath}`);
         try {
+            readDir(this.destinationPath)
+                .then(() => {
+                    // Directory exists
+                })
+                .catch(async (err) => {
+                    info(`Destination directory ${this.destinationPath} does not exist. Creating it.`);
+                    await createDir(await appDataDir());
+                });
+
+
             const response = await fetch(this.url);
             if (!response.ok) {
                 throw new Error(`Failed to download from ${this.url}. Status: ${response.status}`);
@@ -25,10 +36,11 @@ export class FileDownloader {
         } catch (downloadErr) {
             const downloadErrorMessage =
                 downloadErr instanceof Error
-                    ? downloadErr.message
-                    : 'An unknown error occurred during download';
-            error(`Error during download: ${downloadErrorMessage}`);
+                    ? `Error during download: ${downloadErr.message}. URL: ${this.url}, Destination Path: ${this.destinationPath}`
+                    : `An unknown error occurred during download. URL: ${this.url}, Destination Path: ${this.destinationPath}`;
+            error(`${downloadErrorMessage}. Error object: ${JSON.stringify(downloadErr)}`);
             return '';
         }
     }
 }
+

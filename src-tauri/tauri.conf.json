@@ -18,7 +18,9 @@
                 "all": true,
                 "scope": [
                     "$APPDATA/*",
-                    "$APPDATA/**/*"
+                    "$APPDATA/**/*",
+                    "$DATA/*",
+                    "$DATA/**/*"
                 ]
             }
         },
@@ -37,7 +39,7 @@
                 "icons/icon.icns",
                 "icons/icon.ico"
             ],
-            "identifier": "com.cubichLauncher",
+            "identifier": "com.cubichi-launcher",
             "longDescription": "",
             "macOS": {
                 "entitlements": null,

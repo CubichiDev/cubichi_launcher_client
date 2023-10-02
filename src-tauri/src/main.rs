@@ -2,7 +2,7 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
 use log::LevelFilter;
-use tauri_plugin_log::LogTarget;
+use tauri_plugin_log::{fern::colors::ColoredLevelConfig, LogTarget};
 
 fn main() {
     tauri::Builder::default()
@@ -10,6 +10,7 @@ fn main() {
         .plugin(
             tauri_plugin_log::Builder::default()
                 .targets([LogTarget::Webview, LogTarget::Stdout, LogTarget::LogDir])
+                .with_colors(ColoredLevelConfig::default())
                 .level(LevelFilter::Info)
                 .build(),
         )
